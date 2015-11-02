@@ -1,0 +1,26 @@
+<div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" ng-click="$hide()"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Review of Robot 1x</h4>
+      </div>
+      <div class="modal-body">
+        <form ng-submit="app.reviewIt()" novalidate name="review_form">
+          <div class="row">
+            <label>Subject:</label><br>
+            <input type="text" placeholder="Subject" ng-model="app.subject">
+          </div>
+          <div class="row">
+            <label>Content:</label><br>
+            <input type="text" placeholder="Content" ng-model="app.content">
+          </div>
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="$hide()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -37,7 +37,7 @@ gulp.task('sass', function() {
 
 
 // Serve Task with nodemon
-gulp.task('serve', ['start', 'server'])
+gulp.task('serve', ['server'])
 
 // Default task
 gulp.task('default', ['jshint', 'sass', 'watch']);

@@ -24,3 +24,32 @@ body {
 header {
   text-align: center;
 }
+
+.creation {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.reviews {
+  width: 80%;
+  margin: 0 auto;
+  .panel-heading {
+    &:hover {
+      background: black;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+.modal-body {
+  padding: 5% 35%;
+  input {
+    padding: 1%;
+    margin-bottom: 5%;
+    outline: none;
+    border-radius: 8px;
+  }
+}

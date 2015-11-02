@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>AngularStrap</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body ng-controller="MainCtrl as app">
 
@@ -13,7 +13,31 @@
   </header>
 
   <section class="mainContent container-fluid">
-    <button ng-click="app.showModal()">Modal</button>
+    <div class="creation">
+      <h2>Submit Your Review of the new Robot 1x</h2>
+      <!-- <button class="btn btn-success" ng-click="app.showModal()">Create a New Review</button> -->
+      <!-- You can use a custom html template with the `data-template` attr -->
+      <button type="button" class="btn btn-success" data-template-url="app/modal/template.html" bs-modal="modal">Create a New Review
+      </button>
+    </div>
+
+    <div class="reviews">
+      <h3>Past Reviews</h3>
+      <div class="panel-group" ng-model="app.panels.activePanel" role="tablist" aria-multiselectable="true" bs-collapse>
+        <div class="panel panel-default" ng-repeat="panel in app.panels">
+          <div class="panel-heading" role="tab">
+            <h4 class="panel-title" bs-collapse-toggle>
+                {{ panel.subject }}
+            </h4>
+          </div>
+          <div class="panel-collapse" role="tabpanel" bs-collapse-target>
+            <div class="panel-body">
+              {{ panel.content }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
 
