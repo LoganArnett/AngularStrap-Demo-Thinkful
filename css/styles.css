@@ -51,6 +51,12 @@ header {
     width: 60%;
     height: 10vh; }
 
+.hamburger {
+  position: absolute;
+  top: 5%;
+  left: 2%;
+  color: white; }
+
 .aside {
   position: fixed;
   top: 0;

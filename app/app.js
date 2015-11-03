@@ -17,15 +17,13 @@ angular.module('angularStrAPP', ['ngAnimate','mgcrea.ngStrap'])
       subject: self.subject,
       content: self.content
     })
-    self.myAlert.$promise.then(function() {self.myAlert.show();});
-
 
     self.subject = "";
     self.content = "";
   }
   // END Modal Template Demo
   // Alert Demo
-  this.myAlert = $alert({title: 'Holy guacamole!', content: 'Best check yo self, you\'re not looking too good.', placement: 'top-right', type: 'info', show: false, duration: 2});
+  this.myAlert = $alert({title: 'Woah!', content: 'A review has been deleted!', placement: 'top-right', type: 'danger', show: false, duration: 2});
   // END Alert Demo
 
 
@@ -45,6 +43,7 @@ angular.module('angularStrAPP', ['ngAnimate','mgcrea.ngStrap'])
   this.panels.activePanel = -1;
 
   this.deleteReview = function(index){
+    self.myAlert.$promise.then(function() {self.myAlert.show()});
     this.panels.splice(index, 1);
   }
   // END Collapse Panels
