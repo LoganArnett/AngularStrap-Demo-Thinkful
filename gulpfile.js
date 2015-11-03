@@ -1,20 +1,15 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     neat = require('node-neat').includePaths,
-    concat = require('gulp-concat'),
     minifyHTML = require('gulp-minify-html'),
-    browserify = require('browserify'),
     rename = require('gulp-rename'),
-    uglify = require('gulp-uglify'),
     source = require('vinyl-source-stream'),
     buffer = require('vinyl-buffer'),
-    browserSync = require('browser-sync').create(),
-    nodemon = require('gulp-nodemon'),
-    imagemin = require('gulp-imagemin');
+    browserSync = require('browser-sync').create();
 
 
     // Static Server + watching scss/html files
-gulp.task('server', ['sass'], function() {
+gulp.task('serve', ['sass'], function() {
 
     browserSync.init({
         server: "./"
@@ -34,10 +29,6 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('css/'))
     .pipe(browserSync.stream());
 });
-
-
-// Serve Task with nodemon
-gulp.task('serve', ['server'])
 
 // Default task
 gulp.task('default', ['jshint', 'sass', 'watch']);
