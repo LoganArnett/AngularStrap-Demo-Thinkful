@@ -43,5 +43,9 @@ angular.module('angularStrAPP', ['ngAnimate','mgcrea.ngStrap'])
 
   // defaults to none starting as active
   this.panels.activePanel = -1;
+
+  this.deleteReview = function(index){
+    this.panels.splice(index, 1);
+  }
   // END Collapse Panels
 })

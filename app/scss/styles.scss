@@ -30,6 +30,10 @@ header {
   margin: 0 auto;
   text-align: center;
   position: relative;
+  img {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 .reviews {
@@ -40,16 +44,45 @@ header {
       background: black;
       color: white;
       cursor: pointer;
+      .glyphicon-trash {
+        opacity: 1;
+      }
+    }
+    .glyphicon-trash {
+      float: right;
+      opacity: 0;
     }
   }
 }
 
 .modal-body {
-  padding: 5% 35%;
-  input {
+  padding: 5% 10%;
+  input, textarea {
     padding: 1%;
     margin-bottom: 5%;
     outline: none;
     border-radius: 8px;
   }
+  textarea {
+    width: 60%;
+    height: 10vh;
+  }
+}
+
+.aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 1049;
+    overflow: auto;
+    min-width: 320px;
+    background: #fff;
+    outline: none;
+}
+
+.am-slide-left {
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
 }

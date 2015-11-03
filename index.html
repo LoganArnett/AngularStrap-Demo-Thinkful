@@ -4,17 +4,20 @@
   <meta charset="UTF-8">
   <title>AngularStrap</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://mgcrea.github.io/angular-strap/styles/libs.min.css">
+  <link rel="stylesheet" href="http://mgcrea.github.io/angular-strap/styles/docs.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body ng-controller="MainCtrl as app">
 
   <header class="jumbotron">
-    <h1>Welcome to {{app.name}}</h1>
+    <h1>Submit Your Review of the new Robot 1x</h1>
+    <button data-template-url="app/aside/aside.html" data-placement="left" data-animation="am-slide-left" bs-aside="aside" data-container="body"><i class="glyphicon glyphicon-menu-hamburger"></i></button>
   </header>
 
   <section class="mainContent container-fluid">
     <div class="creation">
-      <h2>Submit Your Review of the new Robot 1x</h2>
+      <img src="https://gbatemp.net/data/avatars/l/353/353855.jpg?1410417526" alt="">
       <!-- <button class="btn btn-success" ng-click="app.showModal()">Create a New Review</button> -->
       <!-- You can use a custom html template with the `data-template` attr -->
       <button type="button" class="btn btn-success" data-template-url="app/modal/template.html" bs-modal="modal">Create a New Review
@@ -22,12 +25,13 @@
     </div>
 
     <div class="reviews">
-      <h3>Past Reviews</h3>
+      <h3 ng-show="app.panels.length > 0">Past Reviews</h3>
       <div class="panel-group" ng-model="app.panels.activePanel" role="tablist" aria-multiselectable="true" bs-collapse>
-        <div class="panel panel-default" ng-repeat="panel in app.panels">
+        <div class="panel panel-default" ng-repeat="panel in app.panels track by $index">
           <div class="panel-heading" role="tab">
             <h4 class="panel-title" bs-collapse-toggle>
                 {{ panel.subject }}
+                <span class="glyphicon glyphicon-trash" ng-click="app.deleteReview($index)"></span>
             </h4>
           </div>
           <div class="panel-collapse" role="tabpanel" bs-collapse-target>
