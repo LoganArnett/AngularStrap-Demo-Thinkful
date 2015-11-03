@@ -3,7 +3,8 @@
 
 ### Setup Instructions:
 
-1. Clone the repo locally: `git clone https://github.com/LoganArnett/AngularStrap-Demo-Thinkful.git` and then run
-`bower install` to bring in the dependencies
+1. Fork the repo and then clone it locally
+2. 
+2. After its cloned run `bower install` to bring in the dependencies
 
-2. Checkout the [AngularStrap Docs](http://mgcrea.github.io/angular-strap/) and get started!
+3. Checkout the [AngularStrap Docs](http://mgcrea.github.io/angular-strap/) and get started!
